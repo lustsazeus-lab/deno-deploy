@@ -181,7 +181,7 @@ runs:
       env:
         DENO_DEPLOY_TOKEN: ${{ inputs.token }}
       run: |
-        deploy_cmd=(deno deploy --org "$DENO_ORG" --app "$DENO_PROJECT_NAME" --entrypoint "${{ inputs.entrypoint }}")
+        deploy_cmd=(deno deploy --org "$DENO_ORG" --app "$DENO_PROJECT_NAME")
         if [ "${{ inputs.production }}" = "true" ]; then
           deploy_cmd+=(--prod)
         fi
